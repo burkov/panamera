@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { App } from './components/app';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import 'reset-css'
 
 dayjs.extend(relativeTime);
 
