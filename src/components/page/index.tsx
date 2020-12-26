@@ -7,7 +7,7 @@ import styles from './page.module.css';
 export const Page: FC<{}> = ({ children }) => {
   const {
     branch,
-    commit: { date, shortHash },
+    commit: { date, shortHash, message },
   } = GitInfo();
   return (
     <Container className={styles.pageContainer}>
@@ -20,7 +20,7 @@ export const Page: FC<{}> = ({ children }) => {
       <LayoutFooter className={styles.footer}>
         <Hr />
         <p className="wt-text-3">
-          commit {shortHash} | <span className={styles.branch}>{branch}</span> | built {dayjs(date).fromNow()}
+          {shortHash} | <span className={styles.branch}>{branch}</span> | built {dayjs(date).fromNow()} | {message}
         </p>
       </LayoutFooter>
     </Container>

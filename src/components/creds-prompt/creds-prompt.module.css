@@ -1,0 +1,4 @@
+.verticalLine {
+    height: 200px;
+    border-left: 1px solid var(--wt-color-dark-20);
+}
