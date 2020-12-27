@@ -5,7 +5,4 @@ export interface AwsCredentials {
   secretKey: string;
 }
 
-export const useAwsCredentialsStorage = (): AwsCredentials | undefined => {
-  const [credentials] = useLocalStorage<AwsCredentials>('aws-credentials');
-  return credentials;
-};
+export const useAwsCredentialsStorage = () => useLocalStorage<AwsCredentials>('aws-credentials');

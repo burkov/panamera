@@ -1,0 +1,16 @@
+.linkButton {
+    background-color: transparent;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+}
+
+.linkButton:hover,
+.linkButton:focus {
+    text-decoration: none;
+    border-bottom: 1px solid var(--wt-link-color);
+}
