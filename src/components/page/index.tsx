@@ -13,7 +13,7 @@ export const Page: FC<{}> = ({ children }) => {
     <Container className={styles.pageContainer}>
       <div className={styles.contentWrapper}>
         <LayoutHeader>
-          <h1 className="wt-h1">Panamera: a Porsche for your env params</h1>
+          <h1 className="wt-h1">Panamera: parameter naming errors resolution assistant</h1>
         </LayoutHeader>
         <LayoutContent className="wt-offset-top-24">{children}</LayoutContent>
       </div>

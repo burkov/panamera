@@ -3,9 +3,13 @@ import '@webteam/typography';
 import { useAwsCredentialsStorage } from '../../core/use-aws-credentials-storage';
 import { CredentialsPrompt } from '../creds-prompt';
 import { ParamsTable } from '../params-table';
+import { Page } from '../page';
 
 export const App: FC = ({}) => {
   const [credentials, setCredentials, removeCredentials] = useAwsCredentialsStorage();
-  if (credentials === undefined) return <CredentialsPrompt onCredentialsSelected={setCredentials} />;
-  return <ParamsTable credentials={credentials} removeCredentials={removeCredentials} />;
+  return (
+    <Page>
+      {credentials === undefined ? <CredentialsPrompt onCredentialsSelected={setCredentials} /> : <ParamsTable credentials={credentials} removeCredentials={removeCredentials} />}
+    </Page>
+  );
 };

@@ -4,5 +4,5 @@ import cn from 'classnames';
 
 export const ErrorDiv: FC<React.HTMLAttributes<HTMLDivElement> & { error?: Error }> = ({ className, error }) => {
   if (!error) return null;
-  return <div className={cn(className, styles.errorDiv)}>Error: {error.message}</div>;
+  return <div className={cn(styles.errorDiv, 'wt-text-2', className)}>Error: {error.message}</div>;
 };

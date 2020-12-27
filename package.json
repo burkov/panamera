@@ -24,6 +24,7 @@
     "@webteam/textarea": "^5.0.6",
     "@webteam/typography": "^5.4.4",
     "@webteam/ui-contexts": "^0.8.4",
+    "aws-sdk": "^2.817.0",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "dayjs": "^1.9.7",
