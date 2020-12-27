@@ -4,11 +4,12 @@ import { LinkButton } from '../link-button';
 import { maskKey } from '../../common/helpers';
 import AWS, { AWSError, Credentials } from 'aws-sdk';
 import { useEffectOnce } from 'react-use';
-import { useAwsParamsStorage } from '../../core/use-aws-params-storage';
+import { ParameterWithPrefix, useAwsParamsStorage } from '../../core/use-aws-params-storage';
 import dayjs from 'dayjs';
 import { GetParametersByPathResult, Parameter } from 'aws-sdk/clients/ssm';
 import { ErrorDiv } from '../error-div';
 import Button from '@webteam/button';
+import { ParametersTable } from './table';
 
 interface Prefix {
   tomcat: string;
@@ -68,7 +69,7 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
   useEffectOnce(() => {});
 
   const refreshParams = async () => {
-    const result: Parameter[] = [];
+    const result: ParameterWithPrefix[] = [];
     const allPrefixes = new Set(paramsPrefixes.flatMap(({ tomcat, allapps, lservice }) => [tomcat, lservice, allapps]));
     setErrors([]);
     for (const prefix of Array.from(allPrefixes)) {
@@ -77,10 +78,16 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
         let page = 1;
         const request = ssm.getParametersByPath({ Path: prefix, Recursive: true, WithDecryption: true });
         request.eachPage((err: AWSError, data: GetParametersByPathResult, doneCallback) => {
-          setLoading(`prefix '${prefix}' page ${page}`);
+          setLoading(`prefix '${prefix}' page ${page} (total: ${result.length})`);
           if (err) setErrors((e) => [...e, err]);
           if (!doneCallback?.()) {
-            if (data?.Parameters) result.push(...data?.Parameters);
+            if (data?.Parameters)
+              result.push(
+                ...data?.Parameters.map((e: Parameter) => {
+                  (e as ParameterWithPrefix).prefix = prefix;
+                  return e as ParameterWithPrefix;
+                }),
+              );
             page++;
           }
           if (data == null) resolve(undefined);
@@ -117,6 +124,7 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
         </p>
       )}
       {loading && <p className="wt-text-2">Loading {loading}...</p>}
+      {!loading && <ParametersTable params={parameters} />}
     </>
   );
 };

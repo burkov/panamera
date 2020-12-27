@@ -1845,7 +1845,14 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/lodash@^4.14.165":
+"@types/lodash.countby@^4.6.6":
+  version "4.6.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash.countby/-/lodash.countby-4.6.6.tgz#ff7e628f538303a5b29ea3c39230ba94af7d0dd9"
+  integrity sha512-buriykJ1CVPuYe2BVZjWNCq8oY66kgrGCLMvwXD3llirKym0GO4B4qSCzXtpnCskj+z0W2G1jZWVx0RZf68Qag==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*", "@types/lodash@^4.14.165":
   version "4.14.166"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.166.tgz#07e7f2699a149219dbc3c35574f126ec8737688f"
   integrity sha512-A3YT/c1oTlyvvW/GQqG86EyqWNrT/tisOIh2mW3YCgcx71TNjiTZA3zYZWA5BCmtsOTXjhliy4c4yEkErw6njA==
@@ -7915,6 +7922,11 @@ lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
+
+lodash.countby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.countby/-/lodash.countby-4.6.0.tgz#5351f24de16724a0059b561f920b0d80af78a33c"
+  integrity sha1-U1HyTeFnJKAFm1YfkgsNgK94ozw=
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
