@@ -1,3 +1,8 @@
+.wideDiv {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .pageContainer {
   position: relative;
   min-height: 100vh;

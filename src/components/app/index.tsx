@@ -8,8 +8,6 @@ import { Page } from '../page';
 export const App: FC = ({}) => {
   const [credentials, setCredentials, removeCredentials] = useAwsCredentialsStorage();
   return (
-    <Page>
-      {credentials === undefined ? <CredentialsPrompt onCredentialsSelected={setCredentials} /> : <ParamsTable credentials={credentials} removeCredentials={removeCredentials} />}
-    </Page>
+      credentials === undefined ? <CredentialsPrompt onCredentialsSelected={setCredentials} /> : <ParamsTable credentials={credentials} removeCredentials={removeCredentials} />
   );
 };

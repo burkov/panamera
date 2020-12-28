@@ -10,6 +10,7 @@ import { GetParametersByPathResult, Parameter } from 'aws-sdk/clients/ssm';
 import { ErrorDiv } from '../error-div';
 import Button from '@webteam/button';
 import { ParametersTable } from './table';
+import { Page } from '../page';
 
 interface Prefix {
   tomcat: string;
@@ -105,7 +106,7 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
   };
 
   return (
-    <>
+    <Page wide={parameters.length > 0}>
       <div className="wt-text-2">
         Using key: <strong>{maskKey(accessKey)}</strong> | Fetched <strong>{parameters?.length}</strong> parameters <strong>{fetchedAt ? dayjs(fetchedAt).fromNow() : ''}</strong> |{' '}
         <Button size="xs" mode="nude" onClick={refreshParams}>
@@ -125,6 +126,6 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
       )}
       {loading && <p className="wt-text-2">Loading {loading}...</p>}
       {!loading && <ParametersTable params={parameters} />}
-    </>
+    </Page>
   );
 };
