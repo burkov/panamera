@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/panamera/static/css/main.a46c0a0b.chunk.css",
-    "main.js": "/panamera/static/js/main.52602211.chunk.js",
-    "main.js.map": "/panamera/static/js/main.52602211.chunk.js.map",
+    "main.js": "/panamera/static/js/main.f9167e7f.chunk.js",
+    "main.js.map": "/panamera/static/js/main.f9167e7f.chunk.js.map",
     "runtime-main.js": "/panamera/static/js/runtime-main.4b73f22e.js",
     "runtime-main.js.map": "/panamera/static/js/runtime-main.4b73f22e.js.map",
     "static/css/2.3831d67f.chunk.css": "/panamera/static/css/2.3831d67f.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.3831d67f.chunk.css",
     "static/js/2.24ea0057.chunk.js",
     "static/css/main.a46c0a0b.chunk.css",
-    "static/js/main.52602211.chunk.js"
+    "static/js/main.f9167e7f.chunk.js"
   ]
 }
