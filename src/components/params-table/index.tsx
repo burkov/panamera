@@ -125,7 +125,7 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
         </p>
       )}
       {loading && <p className="wt-text-2">Loading {loading}...</p>}
-      {!loading && <ParametersTable params={parameters} />}
+      {!loading && parameters.length > 0 && <ParametersTable params={parameters} />}
     </Page>
   );
 };
