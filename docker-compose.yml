@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  secrets:
+    restart: unless-stopped
+    build: .
+    image: panamera:latest
+    container_name: panamera
+    ports:
+      - 8080:42002
