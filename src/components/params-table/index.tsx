@@ -10,7 +10,7 @@ import { GetParametersByPathResult, Parameter } from 'aws-sdk/clients/ssm';
 import { ErrorDiv } from '../error-div';
 import Button from '@webteam/button';
 import { ParametersTable } from './table';
-import { Page } from '../page';
+import { PageTemplate } from '../page';
 
 interface Prefix {
   tomcat: string;
@@ -61,7 +61,7 @@ const paramsPrefixes: Prefix[] = [
   },
 ];
 
-export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: () => void }> = ({ credentials, removeCredentials }) => {
+export const MainPage: FC<{ credentials: AwsCredentials; removeCredentials: () => void }> = ({ credentials, removeCredentials }) => {
   const { accessKey, secretKey } = credentials;
   const [loading, setLoading] = useState<string>();
   const [errors, setErrors] = useState<AWSError[]>([]);
@@ -106,7 +106,7 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
   };
 
   return (
-    <Page>
+    <>
       <div className="wt-text-2">
         Using key: <strong>{maskKey(accessKey)}</strong> | Fetched <strong>{parameters?.length}</strong> parameters <strong>{fetchedAt ? dayjs(fetchedAt).fromNow() : ''}</strong> |{' '}
         <Button size="xs" mode="nude" onClick={refreshParams}>
@@ -126,6 +126,6 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
       )}
       {loading && <p className="wt-text-2">Loading {loading}...</p>}
       {!loading && parameters.length > 0 && <ParametersTable params={parameters} />}
-    </Page>
+    </>
   );
 };

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { Container, Hr, LayoutContent, LayoutFooter, LayoutHeader } from '@webteam/layout';
+import { Hr, LayoutContent, LayoutFooter, LayoutHeader } from '@webteam/layout';
 import GitInfo from 'react-git-info/macro';
 import dayjs from 'dayjs';
 import styles from './page.module.css';
 
-export const Page: FC = ({ children }) => {
+export const PageTemplate: FC = ({ children }) => {
   const {
     branch,
     commit: { date, shortHash, message },
