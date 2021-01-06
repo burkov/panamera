@@ -64,11 +64,13 @@ export const MainPage: FC<{}> = () => {
   const [loading, setLoading] = useState<string>();
   const [errors, setErrors] = useState<AWSError[]>([]);
   const ssm = new AWS.SSM({ region: 'eu-west-1', credentials: new Credentials(accessKey, secretKey) });
-  const [{ fetchedAt, parameters }, setParameters, removeParams] = useAwsParametersStorage();
+  const { value, setValue, removeValue } = useAwsParametersStorage();
+  const { fetchedAt, parameters } = value ?? { fetchedAt: undefined, parameters: [] };
 
   const refreshParams = async () => {
     const result: ParameterWithPrefix[] = [];
-    const allPrefixes = new Set(paramsPrefixes.flatMap(({ tomcat, allapps, lservice }) => [tomcat, lservice, allapps]));
+    const flatPrefixes = paramsPrefixes.flatMap(({ tomcat, allapps, lservice }) => [tomcat, lservice, allapps]);
+    const allPrefixes = new Set(flatPrefixes);
     setErrors([]);
     for (const prefix of Array.from(allPrefixes)) {
       await new Promise((resolve) => {
@@ -81,7 +83,7 @@ export const MainPage: FC<{}> = () => {
             if (data?.Parameters)
               result.push(
                 ...data?.Parameters.map((e: Parameter) => {
-                  (e as ParameterWithPrefix).prefix = prefix;
+                  (e as ParameterWithPrefix).Prefix = prefix;
                   return e as ParameterWithPrefix;
                 }),
               );
@@ -92,13 +94,13 @@ export const MainPage: FC<{}> = () => {
         });
       });
     }
-    setParameters(result);
+    setValue({ fetchedAt: new Date(), parameters: result });
     setLoading(undefined);
   };
 
   const onSignOut = () => {
     removeCredentials();
-    removeParams();
+    removeValue();
   };
 
   return (

@@ -28,10 +28,10 @@ export const PrefixRow: FC<{ paramsForName: ParameterWithPrefix[] }> = ({ params
             <pre>
               {forGivenPrefix.length > 0
                 ? forGivenPrefix
-                    .map(({ Value, prefix }, _, list) =>
+                    .map(({ Value, Prefix }, _, list) =>
                       list.length > 1
-                        ? `${prefix
-                            .slice(prefix.lastIndexOf('/') + 1)
+                        ? `${Prefix
+                            .slice(Prefix.lastIndexOf('/') + 1)
                             .replace('lservice', 'ls')
                             .replace('allapps', 'all')}: ${truncate(32, Value!)}`
                         : truncate(32, Value!),
@@ -51,8 +51,8 @@ export const ParametersTable: FC<{ params: ParameterWithPrefix[] }> = ({ params 
     const ps = new Set<string>();
     const r = new Map<string, ParameterWithPrefix[]>();
     params.forEach((p) => {
-      ps.add(p.prefix);
-      const name = p.Name!.slice(p.prefix.length);
+      ps.add(p.Prefix);
+      const name = p.Name!.slice(p.Prefix.length);
       const old = r.get(name) ?? [];
       r.set(name, [...old, p]);
     });

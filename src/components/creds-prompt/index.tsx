@@ -3,13 +3,12 @@ import { Col, Row } from '@webteam/layout';
 import styles from './creds-prompt.module.css';
 import { ImportAwsCredentials } from './import-aws-creds';
 import { AwsCredentials, useAwsCredentials } from '../../core/use-aws-credentials';
-import { useHistory } from 'react-router-dom';
-import { useLocation } from 'react-use';
+import { useHistory, useLocation } from 'react-router-dom';
 
 export const CredentialsPage: FC<{}> = () => {
   const { credentials, setCredentials } = useAwsCredentials();
   const history = useHistory();
-  const location = useLocation();
+  const location = useLocation() as any;
   const returnTo = location?.state?.from ?? '/';
   const onCredentialsSelected = (value: AwsCredentials) => {
     setCredentials(value);
