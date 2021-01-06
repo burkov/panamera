@@ -7,7 +7,7 @@ import { AwsCredentials } from '../../core/use-aws-credentials-storage';
 
 export const CredentialsPrompt: FC<{ onCredentialsSelected: (credentials: AwsCredentials) => void }> = ({ onCredentialsSelected }) => {
   return (
-    <Page wide={false}>
+    <Page>
       <Row>
         <Col span={4}>
           <ImportAwsCredentials onCredentialsSelected={onCredentialsSelected} />

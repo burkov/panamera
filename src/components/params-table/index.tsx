@@ -106,7 +106,7 @@ export const ParamsTable: FC<{ credentials: AwsCredentials; removeCredentials: (
   };
 
   return (
-    <Page wide={parameters.length > 0}>
+    <Page>
       <div className="wt-text-2">
         Using key: <strong>{maskKey(accessKey)}</strong> | Fetched <strong>{parameters?.length}</strong> parameters <strong>{fetchedAt ? dayjs(fetchedAt).fromNow() : ''}</strong> |{' '}
         <Button size="xs" mode="nude" onClick={refreshParams}>

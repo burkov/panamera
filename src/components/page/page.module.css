@@ -4,6 +4,7 @@
 }
 
 .pageContainer {
+  margin: 0 10px;
   position: relative;
   min-height: 100vh;
 }
