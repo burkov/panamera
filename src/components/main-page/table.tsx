@@ -1,8 +1,8 @@
 import React, { FC, useMemo } from 'react';
-import { ParameterWithPrefix } from '../../core/use-aws-params-storage';
+import { ParameterWithPrefix } from '../../core/use-aws-parameters-storage';
 import styles from './params-table.module.css';
 import _ from 'lodash';
-import { COLOR_SUCCESS, COLOR_WARNING, COLOR_ERROR } from '@webteam/colors';
+import { COLOR_SUCCESS, COLOR_WARNING } from '@webteam/colors';
 
 const prefixes = ['dev1', 'dev2', 'dev3', 'dev4', 'dev5', 'audt', 'stgn/blue', 'stgn/green'];
 
@@ -19,7 +19,6 @@ export const PrefixRow: FC<{ paramsForName: ParameterWithPrefix[] }> = ({ params
       </td>
     );
   const colors = new Map(_.reverse(_.sortBy(Object.entries(_.countBy(paramsForName, 'Value')), [(e) => e[1]])).map(([v], i) => [v, colorMap[i]]));
-  console.log(colors);
   return (
     <>
       {prefixes.map((prefix) => {

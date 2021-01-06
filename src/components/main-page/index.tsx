@@ -1,16 +1,13 @@
 import React, { FC, useState } from 'react';
-import { AwsCredentials } from '../../core/use-aws-credentials-storage';
-import { LinkButton } from '../link-button';
+import { AwsCredentials, useAwsCredentials } from '../../core/use-aws-credentials';
 import { maskKey } from '../../common/helpers';
 import AWS, { AWSError, Credentials } from 'aws-sdk';
-import { useEffectOnce } from 'react-use';
-import { ParameterWithPrefix, useAwsParamsStorage } from '../../core/use-aws-params-storage';
+import { ParameterWithPrefix, useAwsParametersStorage } from '../../core/use-aws-parameters-storage';
 import dayjs from 'dayjs';
 import { GetParametersByPathResult, Parameter } from 'aws-sdk/clients/ssm';
 import { ErrorDiv } from '../error-div';
 import Button from '@webteam/button';
 import { ParametersTable } from './table';
-import { PageTemplate } from '../page';
 
 interface Prefix {
   tomcat: string;
@@ -61,20 +58,19 @@ const paramsPrefixes: Prefix[] = [
   },
 ];
 
-export const MainPage: FC<{ credentials: AwsCredentials; removeCredentials: () => void }> = ({ credentials, removeCredentials }) => {
-  const { accessKey, secretKey } = credentials;
+export const MainPage: FC<{}> = () => {
+  const { credentials, removeCredentials } = useAwsCredentials();
+  const { accessKey, secretKey } = credentials ?? { accessKey: '', secretKey: '' };
   const [loading, setLoading] = useState<string>();
   const [errors, setErrors] = useState<AWSError[]>([]);
   const ssm = new AWS.SSM({ region: 'eu-west-1', credentials: new Credentials(accessKey, secretKey) });
-  const [{ fetchedAt, parameters }, setParameters, removeParams] = useAwsParamsStorage();
-  useEffectOnce(() => {});
+  const [{ fetchedAt, parameters }, setParameters, removeParams] = useAwsParametersStorage();
 
   const refreshParams = async () => {
     const result: ParameterWithPrefix[] = [];
     const allPrefixes = new Set(paramsPrefixes.flatMap(({ tomcat, allapps, lservice }) => [tomcat, lservice, allapps]));
     setErrors([]);
     for (const prefix of Array.from(allPrefixes)) {
-      console.log(prefix);
       await new Promise((resolve) => {
         let page = 1;
         const request = ssm.getParametersByPath({ Path: prefix, Recursive: true, WithDecryption: true });

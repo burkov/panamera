@@ -1,28 +1,21 @@
 import React, { FC } from 'react';
 import '@webteam/typography';
-import { useAwsCredentialsStorage } from '../../core/use-aws-credentials-storage';
+import { useAwsCredentials } from '../../core/use-aws-credentials';
 import { CredentialsPage } from '../creds-prompt';
-import { MainPage } from '../params-table';
-import { Route, Switch, useHistory } from 'react-router-dom';
-import { RouteWithCredentials } from '../redirect-if-missing';
+import { Route, Switch } from 'react-router-dom';
+import { RouteWithCredentials } from '../route-with-credentials';
 import { PageTemplate } from '../page';
+import { MainPage } from '../main-page';
 
 export const App: FC = () => {
-  const [credentials, setCredentials, removeCredentials] = useAwsCredentialsStorage();
-  const history = useHistory();
   return (
     <PageTemplate>
       <Switch>
         <Route path="/credentials">
-          <CredentialsPage
-            onCredentialsSelected={(credentials) => {
-              setCredentials(credentials);
-              history.replace('/');
-            }}
-          />
+          <CredentialsPage />
         </Route>
-        <RouteWithCredentials credentials={credentials} redirectTo="/credentials" path="/" exact={true}>
-          <MainPage credentials={credentials!} removeCredentials={removeCredentials} />
+        <RouteWithCredentials path="/" exact={true}>
+          <MainPage />
         </RouteWithCredentials>
       </Switch>
     </PageTemplate>

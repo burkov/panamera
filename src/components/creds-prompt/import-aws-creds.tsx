@@ -3,7 +3,7 @@ import { LinkButton } from '../link-button';
 import { ErrorDiv } from '../error-div';
 import ini from 'ini';
 import * as yup from 'yup';
-import { AwsCredentials } from '../../core/use-aws-credentials-storage';
+import { AwsCredentials } from '../../core/use-aws-credentials';
 import { List, ListItem } from '@webteam/list';
 import { maskKey, tryCatch } from '../../common/helpers';
 

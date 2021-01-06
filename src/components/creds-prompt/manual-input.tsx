@@ -4,7 +4,7 @@ import Button from '@webteam/button';
 import { Col, Row } from '@webteam/layout';
 import { FormikInput, FormikSubmitButton } from '@webteam/formik-wrappers';
 import faker from 'faker';
-import { AwsCredentials } from '../../core/use-aws-credentials-storage';
+import { AwsCredentials } from '../../core/use-aws-credentials';
 import * as yup from 'yup';
 import { Form, Formik } from 'formik';
 
@@ -22,7 +22,6 @@ export const CredentialsManualInput: FC<{}> = ({}) => {
   const accessKeyPlaceholder = useMemo(() => `AKIA${faker.random.alpha({ count: 16, upcase: true })}`, []);
   const secretKeyPlaceholder = useMemo(() => faker.random.alphaNumeric(40), []);
   const onSubmit = useCallback((values: AwsCredentials) => {
-    console.log(values);
     return Promise.resolve();
   }, []);
   return (
