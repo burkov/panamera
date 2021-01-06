@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/panamera/static/css/main.e2111345.chunk.css",
-    "main.js": "/panamera/static/js/main.c9de76ef.chunk.js",
-    "main.js.map": "/panamera/static/js/main.c9de76ef.chunk.js.map",
+    "main.css": "/panamera/static/css/main.bcb31d6d.chunk.css",
+    "main.js": "/panamera/static/js/main.0bcc7d8d.chunk.js",
+    "main.js.map": "/panamera/static/js/main.0bcc7d8d.chunk.js.map",
     "runtime-main.js": "/panamera/static/js/runtime-main.b0be23d9.js",
     "runtime-main.js.map": "/panamera/static/js/runtime-main.b0be23d9.js.map",
     "static/css/2.c9d09b6b.chunk.css": "/panamera/static/css/2.c9d09b6b.chunk.css",
-    "static/js/2.c107051f.chunk.js": "/panamera/static/js/2.c107051f.chunk.js",
-    "static/js/2.c107051f.chunk.js.map": "/panamera/static/js/2.c107051f.chunk.js.map",
+    "static/js/2.845fcfab.chunk.js": "/panamera/static/js/2.845fcfab.chunk.js",
+    "static/js/2.845fcfab.chunk.js.map": "/panamera/static/js/2.845fcfab.chunk.js.map",
     "index.html": "/panamera/index.html",
     "static/css/2.c9d09b6b.chunk.css.map": "/panamera/static/css/2.c9d09b6b.chunk.css.map",
-    "static/css/main.e2111345.chunk.css.map": "/panamera/static/css/main.e2111345.chunk.css.map",
-    "static/js/2.c107051f.chunk.js.LICENSE.txt": "/panamera/static/js/2.c107051f.chunk.js.LICENSE.txt"
+    "static/css/main.bcb31d6d.chunk.css.map": "/panamera/static/css/main.bcb31d6d.chunk.css.map",
+    "static/js/2.845fcfab.chunk.js.LICENSE.txt": "/panamera/static/js/2.845fcfab.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b0be23d9.js",
     "static/css/2.c9d09b6b.chunk.css",
-    "static/js/2.c107051f.chunk.js",
-    "static/css/main.e2111345.chunk.css",
-    "static/js/main.c9de76ef.chunk.js"
+    "static/js/2.845fcfab.chunk.js",
+    "static/css/main.bcb31d6d.chunk.css",
+    "static/js/main.0bcc7d8d.chunk.js"
   ]
 }
