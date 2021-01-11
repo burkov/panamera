@@ -64,7 +64,14 @@ export const ParametersTable: FC<{ params: ParameterWithPrefix[] }> = ({ params 
   }, [params]);
   const fused: Fuse.FuseResult<any>[] = useMemo(() => {
     if (search.trim().length === 0) return sortedParams.map((item) => ({ item, matches: [], refIndex: -1 }));
-    return new Fuse(sortedParams, { keys: ['name'], includeMatches: true }).search(search);
+    return new Fuse(sortedParams, {
+      keys: ['name'],
+      includeMatches: true,
+      minMatchCharLength: 2,
+      includeScore: true,
+    })
+      .search(search)
+      .filter(({ score }) => (score ?? 0) < 0.5);
   }, [sortedParams, search]);
 
   return (
