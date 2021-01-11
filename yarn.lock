@@ -2308,6 +2308,11 @@
   resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/colors/-/@webteam/colors-1.0.24.tgz#4fdc32b9dbf7ad258fafe46abc7b580ba2ead845"
   integrity sha1-T9wyudv3rSWPr+RqvHtYC6Lq2EU=
 
+"@webteam/colors@^1.0.25":
+  version "1.0.25"
+  resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/colors/-/@webteam/colors-1.0.25.tgz#bcc152421e8cdeb7229af0f5497f9772bf90df6e"
+  integrity sha1-vMFSQh6M3rcimvD1SX+Xcr+Q324=
+
 "@webteam/data-services@^0.15.3":
   version "0.15.3"
   resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/data-services/-/@webteam/data-services-0.15.3.tgz#d2cedd3c698abc4a58373b9d52ca82d4a6659616"
@@ -2348,6 +2353,16 @@
   version "2.0.5"
   resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/icons/-/@webteam/icons-2.0.5.tgz#339a950d435ab2fff736e14fcf4f824e4e529254"
   integrity sha1-M5qVDUNasv/3NuFPz0+CTk5SklQ=
+  dependencies:
+    "@babel/runtime-corejs3" "^7.11.0"
+    bem-cn-fast "^1.0.2"
+    classnames "^2.2.6"
+    core-js "^3"
+
+"@webteam/icons@^2.0.7":
+  version "2.0.7"
+  resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/icons/-/@webteam/icons-2.0.7.tgz#cda8eae583139e470243e9bc3273d747cc0b156f"
+  integrity sha1-zajq5YMTnkcCQ+m8MnPXR8wLFW8=
   dependencies:
     "@babel/runtime-corejs3" "^7.11.0"
     bem-cn-fast "^1.0.2"
@@ -2466,6 +2481,16 @@
     core-js "^3"
     react-popper "^2.2.4"
 
+"@webteam/tooltip@^3.1.4":
+  version "3.1.4"
+  resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/tooltip/-/@webteam/tooltip-3.1.4.tgz#e2d181f6d7afa2d541505d27d769147d51a65d2c"
+  integrity sha1-4tGB9tevotVBUF0n12kUfVGmXSw=
+  dependencies:
+    "@babel/runtime-corejs3" "^7.11.0"
+    "@webteam/bem-cn-fast" "^1.1.2"
+    core-js "^3"
+    react-popper "^2.2.4"
+
 "@webteam/typography@^5.4.4":
   version "5.4.4"
   resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/typography/-/@webteam/typography-5.4.4.tgz#155a14c534c2b46002137c6250d20dcbf5dacb18"
@@ -2481,6 +2506,15 @@
   dependencies:
     "@babel/runtime-corejs3" "^7.11.0"
     "@webteam/colors" "^1.0.24"
+    core-js "^3"
+
+"@webteam/ui-contexts@^0.8.5":
+  version "0.8.5"
+  resolved "https://repo.labs.intellij.net/artifactory/api/npm/npm-all/@webteam/ui-contexts/-/@webteam/ui-contexts-0.8.5.tgz#d17f782a5c462bc64bd9380dd32a3c6c70254555"
+  integrity sha1-0X94KlxGK8ZL2TgN0yo8bHAlRVU=
+  dependencies:
+    "@babel/runtime-corejs3" "^7.11.0"
+    "@webteam/colors" "^1.0.25"
     core-js "^3"
 
 "@xtuc/ieee754@^1.2.0":
@@ -2684,6 +2718,11 @@ aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
   integrity sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==
+
+arch@^2.1.1:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/arch/-/arch-2.2.0.tgz#1bc47818f305764f23ab3306b0bfc086c5a29d11"
+  integrity sha512-Of/R0wqp83cgHozfIYLbBMnej79U/SVGOOyuB3VVFv1NRM/PSFMK12x9KVtiYzJqmnU5WR2qp0Z5rHb7sWGnFQ==
 
 are-we-there-yet@~1.1.2:
   version "1.1.5"
@@ -3739,6 +3778,15 @@ cli-table@^0.3.4:
     chalk "^2.4.1"
     string-width "^4.2.0"
 
+clipboardy@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/clipboardy/-/clipboardy-2.3.0.tgz#3c2903650c68e46a91b388985bc2774287dba290"
+  integrity sha512-mKhiIL2DrQIsuXMgBgnfEHOZOryC7kY7YO//TN6c63wlEm3NG5tz+YgY5rVi29KCmq/QQjKYvM7a19+MDOTHOQ==
+  dependencies:
+    arch "^2.1.1"
+    execa "^1.0.0"
+    is-wsl "^2.1.1"
+
 cliui@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-5.0.0.tgz#deefcfdb2e800784aa34f46fa08e06851c7bbbc5"
@@ -3777,6 +3825,11 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
+
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 co@^4.6.0:
   version "4.6.0"
@@ -10392,6 +10445,13 @@ react-app-polyfill@^2.0.0:
     raf "^3.4.1"
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
+
+react-contexify@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-contexify/-/react-contexify-5.0.0.tgz#11b477550a0ee5a9a144399bc17c7c56bbc60057"
+  integrity sha512-2FIp7lxJ6dtfGr8EZ4uVV5p5TQjd0n2h/JU7PrejNIMiCeZWvSVPFh4lj1ZvjXosglBvP7q5JQQ8yUCdSaMSaw==
+  dependencies:
+    clsx "^1.1.1"
 
 react-dev-utils@^11.0.1:
   version "11.0.1"

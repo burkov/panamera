@@ -1,3 +1,63 @@
 .allTheSameRow {
   background: var(--wt-color-success);
 }
+
+.paramsTable td {
+  cursor: pointer;
+}
+
+.missingValueCell {
+  background-color: #ea6060;
+  text-align: center;
+}
+
+.nameTh {
+  width: 15%;
+}
+
+.envTh {
+  width: 10%;
+}
+
+.valueCell {
+  padding: 0 4px;
+  text-overflow: ellipsis;
+}
+
+.valueCell:hover {
+  font-weight: bold;
+}
+
+.consistent0 {
+  background-color: var(--wt-color-success);
+}
+
+.consistent1 {
+  background-color: #9cf55e;
+}
+
+.consistent2 {
+  background-color: #adee98;
+}
+.consistent3 {
+  background-color: #f5db8d;
+}
+.consistent4 {
+  background-color: #f3c05b;
+}
+.consistent5 {
+  background-color: var(--wt-color-warning);
+}
+.consistent6 {
+  background-color: #d3a301;
+}
+.consistent7 {
+  background-color: #f98e8e;
+}
+.consistent8 {
+  background-color: #fe4646;
+}
+
+.copyValueMenuIcon {
+  margin-right: 8px;
+}
