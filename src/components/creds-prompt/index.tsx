@@ -18,7 +18,7 @@ export const CredentialsPage: FC<{}> = () => {
     if (credentials !== undefined) history.push(returnTo);
   }, [credentials, history, returnTo]);
   return (
-    <Row>
+    <Row size="0">
       <Col span={4}>
         <ImportAwsCredentials onCredentialsSelected={onCredentialsSelected} />
         {/*<CredentialsManualInput />*/}
