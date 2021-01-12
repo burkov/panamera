@@ -1748,6 +1748,11 @@
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.11.tgz#2521cc86f69d15c5b90664e4829d84566052c1cf"
   integrity sha512-2koNhpWm3DgWRp5tpkiJ8JGc1xTn2q0l+jUNUE7oMKXUf5NpI9AIdC4kbjGNFBdHtcxBD18LAksoudAVhFKCjw==
 
+"@types/common-prefix@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/common-prefix/-/common-prefix-1.1.0.tgz#eee43ad8043070a5346651a7d23d6c52a57862cc"
+  integrity sha512-u2aWLiunOWtu8YtEEiTD2Vi9X+jRDY9ci92VW4rjRsh2xzAtvwLMxgNH47morQDyzUbm5nUuS76/54DO2ZRhOA==
+
 "@types/eslint@^7.2.4":
   version "7.2.5"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.5.tgz#92172ecf490c2fce4b076739693d75f30376d610"
@@ -3929,6 +3934,11 @@ commander@^6.2.0:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
+
+common-prefix@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/common-prefix/-/common-prefix-1.1.0.tgz#e3a5ea7fafaefc7eb84e760523e1afb985f90f00"
+  integrity sha1-46Xqf6+u/H64TnYFI+GvuYX5DwA=
 
 common-tags@^1.8.0:
   version "1.8.0"

@@ -12,6 +12,7 @@ import { SingleValueCell } from './single-value-cell';
 import { MultiValueCell } from './multi-value-cell';
 import { SingleValueCellMenu } from './single-value-cell';
 import 'react-contexify/dist/ReactContexify.css';
+import commonPrefix from 'common-prefix';
 
 const prefixes = ['dev1', 'dev2', 'dev3', 'dev4', 'dev5', 'audt', 'stgn/blue', 'stgn/green'];
 
@@ -74,32 +75,45 @@ export const ParametersTable: FC<{ params: ParameterWithPrefix[] }> = ({ params 
 
   return (
     <>
-      <Row size='0'>
+      <Row size="0">
         <Col span={4}>
           <Input size="xs" placeholder="Search by param name" onChange={(e) => setSearch(e.target.value)} />
         </Col>
       </Row>
       <table className={cn('wt-table wt-table_wide wt-table_size_xs wt-offset-top-12', styles.paramsTable)}>
         <thead className="wt-text-3">
-        <tr>
-          <th className={styles.nameTh}>Name</th>
-          {prefixes.map((prefix) => (
-            <th key={prefix} className={styles.envTh}>{prefix}</th>
-          ))}
-        </tr>
+          <tr>
+            <th className={styles.nameTh}>Name</th>
+            {prefixes.map((prefix) => (
+              <th key={prefix} className={styles.envTh}>
+                {prefix}
+              </th>
+            ))}
+          </tr>
         </thead>
         <tbody className="wt-text-3">
-        {fused.map(({ item: { name, paramsForName }, matches }) => {
-          const searchWords = matches?.flatMap(({ indices }) => indices.map((tuple) => name.slice(tuple[0], tuple[1] + 1))) ?? [];
-          return (
-            <tr key={`${name}-row`}>
-              <td width={400}>
-                <Highlighter searchWords={searchWords} textToHighlight={name} />
-              </td>
-              <PrefixRow paramsForName={paramsForName} />
-            </tr>
-          );
-        })}
+          {fused.map(({ item: { name, paramsForName }, matches }, i, list) => {
+            const searchWords = matches?.flatMap(({ indices }) => indices.map((tuple) => name.slice(tuple[0], tuple[1] + 1))) ?? [];
+            const parts = name.split('/');
+            const prevNameParts = i > 0 ? list[i - 1].item.name.split('/') : [];
+            const partsToShow = [...parts];
+            const partsToHide = [];
+            for (let i = 0; i < parts.length; i++) {
+              if (parts[i] === prevNameParts[i]) {
+                partsToShow.shift();
+                partsToHide.push(parts[i]);
+              } else break;
+            }
+            return (
+              <tr key={`${name}-row`}>
+                <td width={400} className={styles.prefixTd}>
+                  <Highlighter searchWords={searchWords} textToHighlight={partsToHide.join('/')} className={styles.hiddenPrefix} />
+                  <Highlighter searchWords={searchWords} textToHighlight={(partsToHide.length > 0 ? '/' : '') + partsToShow.join('/')} />
+                </td>
+                <PrefixRow paramsForName={paramsForName} />
+              </tr>
+            );
+          })}
         </tbody>
       </table>
       <SingleValueCellMenu />

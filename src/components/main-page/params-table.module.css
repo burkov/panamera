@@ -2,6 +2,19 @@
   background: var(--wt-color-success);
 }
 
+
+.highlightedPrefix {
+  color: rgba(39, 40, 44, 0.1);
+}
+
+.hiddenPrefix {
+  color: rgba(39, 40, 44, 0.1);
+}
+
+.prefixTd:hover > span {
+  color: rgba(39, 40, 44, 0.7);
+}
+
 .paramsTable td {
   cursor: pointer;
 }
