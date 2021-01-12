@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/panamera/static/css/main.abdc960f.chunk.css",
-    "main.js": "/panamera/static/js/main.c41930f4.chunk.js",
-    "main.js.map": "/panamera/static/js/main.c41930f4.chunk.js.map",
+    "main.css": "/panamera/static/css/main.8b6ecf2e.chunk.css",
+    "main.js": "/panamera/static/js/main.38847bad.chunk.js",
+    "main.js.map": "/panamera/static/js/main.38847bad.chunk.js.map",
     "runtime-main.js": "/panamera/static/js/runtime-main.b0be23d9.js",
     "runtime-main.js.map": "/panamera/static/js/runtime-main.b0be23d9.js.map",
     "static/css/2.76fb325c.chunk.css": "/panamera/static/css/2.76fb325c.chunk.css",
-    "static/js/2.75f9a18c.chunk.js": "/panamera/static/js/2.75f9a18c.chunk.js",
-    "static/js/2.75f9a18c.chunk.js.map": "/panamera/static/js/2.75f9a18c.chunk.js.map",
+    "static/js/2.d606e0b6.chunk.js": "/panamera/static/js/2.d606e0b6.chunk.js",
+    "static/js/2.d606e0b6.chunk.js.map": "/panamera/static/js/2.d606e0b6.chunk.js.map",
     "index.html": "/panamera/index.html",
     "static/css/2.76fb325c.chunk.css.map": "/panamera/static/css/2.76fb325c.chunk.css.map",
-    "static/css/main.abdc960f.chunk.css.map": "/panamera/static/css/main.abdc960f.chunk.css.map",
-    "static/js/2.75f9a18c.chunk.js.LICENSE.txt": "/panamera/static/js/2.75f9a18c.chunk.js.LICENSE.txt"
+    "static/css/main.8b6ecf2e.chunk.css.map": "/panamera/static/css/main.8b6ecf2e.chunk.css.map",
+    "static/js/2.d606e0b6.chunk.js.LICENSE.txt": "/panamera/static/js/2.d606e0b6.chunk.js.LICENSE.txt",
+    "static/media/panamera-logo.0e64dd04.png": "/panamera/static/media/panamera-logo.0e64dd04.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b0be23d9.js",
     "static/css/2.76fb325c.chunk.css",
-    "static/js/2.75f9a18c.chunk.js",
-    "static/css/main.abdc960f.chunk.css",
-    "static/js/main.c41930f4.chunk.js"
+    "static/js/2.d606e0b6.chunk.js",
+    "static/css/main.8b6ecf2e.chunk.css",
+    "static/js/main.38847bad.chunk.js"
   ]
 }
