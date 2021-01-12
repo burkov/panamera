@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useAwsCredentials } from '../../core/use-aws-credentials';
 import { maskKey } from '../../common/helpers';
 import { AWSError } from 'aws-sdk';
@@ -17,6 +17,7 @@ export const MainPage: FC = () => {
   const [errors, setErrors] = useState<AWSError[]>([]);
   const { value, setValue, removeValue } = useAwsParametersStorage();
   const { fetchedAt, parameters } = value ?? { fetchedAt: undefined, parameters: [] };
+  const [once, setOnce] = useState(true);
 
   const onRefreshClicked = () => {
     setErrors([]);
@@ -37,6 +38,14 @@ export const MainPage: FC = () => {
     removeCredentials();
     removeValue();
   };
+
+  useEffect(() => {
+    if (loading === undefined && parameters?.length === 0 && accessKey !== '' && once) {
+      debugger;
+      onRefreshClicked();
+      setOnce(false);
+    }
+  }, [loading, parameters, accessKey, once, setOnce, onRefreshClicked]);
 
   return (
     <>
