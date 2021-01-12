@@ -3,6 +3,11 @@
   padding-right: 10px;
 }
 
+.logo {
+  margin-top: 12px;
+  display: inline;
+}
+
 .pageContainer {
   margin: 0 10px;
   position: relative;

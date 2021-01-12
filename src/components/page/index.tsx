@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { Hr, LayoutContent, LayoutFooter, LayoutHeader } from '@webteam/layout';
+import { Col, Hr, LayoutContent, LayoutFooter, LayoutHeader, Row } from '@webteam/layout';
 import GitInfo from 'react-git-info/macro';
 import dayjs from 'dayjs';
 import styles from './page.module.css';
+import Logo from '../../images/panamera-logo.png';
 
 export const PageTemplate: FC = ({ children }) => {
   const {
@@ -13,7 +14,14 @@ export const PageTemplate: FC = ({ children }) => {
     <div className={styles.pageContainer}>
       <div className={styles.contentWrapper}>
         <LayoutHeader>
-          <h1 className="wt-h1">Panamera: parameters naming errors resolution assistant</h1>
+          <Row size="s" alignItems="center">
+            <Col span="inline">
+              <img src={Logo} width={32} alt="Logo" className={styles.logo} />
+            </Col>
+            <Col span="inline">
+              <h1 className="wt-h1">Panamera: parameters naming errors resolution assistant</h1>
+            </Col>
+          </Row>
         </LayoutHeader>
         <LayoutContent className="wt-offset-top-24">{children}</LayoutContent>
       </div>
