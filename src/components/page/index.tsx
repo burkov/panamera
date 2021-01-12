@@ -13,7 +13,7 @@ export const PageTemplate: FC = ({ children }) => {
     <div className={styles.pageContainer}>
       <div className={styles.contentWrapper}>
         <LayoutHeader>
-          <h1 className="wt-h1">Panamera: parameter naming errors resolution assistant</h1>
+          <h1 className="wt-h1">Panamera: parameters naming errors resolution assistant</h1>
         </LayoutHeader>
         <LayoutContent className="wt-offset-top-24">{children}</LayoutContent>
       </div>

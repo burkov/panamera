@@ -8,11 +8,9 @@ import Fuse from 'fuse.js';
 import Highlighter from 'react-highlight-words';
 import cn from 'classnames';
 import { MissingValueCell } from './missing-value-cell';
-import { SingleValueCell } from './single-value-cell';
+import { SingleValueCell, SingleValueCellMenu } from './single-value-cell';
 import { MultiValueCell } from './multi-value-cell';
-import { SingleValueCellMenu } from './single-value-cell';
 import 'react-contexify/dist/ReactContexify.css';
-import commonPrefix from 'common-prefix';
 
 const prefixes = ['dev1', 'dev2', 'dev3', 'dev4', 'dev5', 'audt', 'stgn/blue', 'stgn/green'];
 
